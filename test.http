@@ -1,0 +1,23 @@
+### 101: ดูข้อมูลทั้งหมด
+GET http://localhost:3000/course/list
+
+### 102: ค้นหาด้วย ID (ลองเปลี่ยนเลขดูได้)
+GET http://localhost:3000/course/search/id?courseId=1
+
+### 103: ดูเฉพาะที่แนะนำ (Promote)
+GET http://localhost:3000/course/promote
+
+### 104: ลองเพิ่มข้อมูลใหม่
+POST http://localhost:3000/course/create
+Content-Type: application/json
+
+{
+  "course_id": 99,
+  "title": "วิชาทดสอบ",
+  "description": "รายละเอียดทดสอบ",
+  "duration": 10,
+  "lecturer": "อาจารย์ทดสอบ",
+  "category": "Test",
+  "promote": 1,
+  "course_image": "test.png"
+}
