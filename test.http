@@ -1,13 +1,13 @@
-### 101: ดูข้อมูลทั้งหมด
+### 101: ดูข้อมูลทั้งหมด (List All)
 GET http://localhost:3000/course/list
 
-### 102: ค้นหาด้วย ID (ลองเปลี่ยนเลขดูได้)
+### 102: ค้นหาด้วย ID (Search by ID)
 GET http://localhost:3000/course/search/id?courseId=1
 
 ### 103: ดูเฉพาะที่แนะนำ (Promote)
 GET http://localhost:3000/course/promote
 
-### 104: ลองเพิ่มข้อมูลใหม่
+### 104: เพิ่มข้อมูลใหม่ (Create)
 POST http://localhost:3000/course/create
 Content-Type: application/json
 
@@ -21,3 +21,21 @@ Content-Type: application/json
   "promote": 1,
   "course_image": "test.png"
 }
+
+### 105: แก้ไขข้อมูลหลักสูตร (Update)
+PUT http://localhost:3000/course/update
+Content-Type: application/json
+
+{
+  "course_id": 99,
+  "title": "วิชาทดสอบ (แก้ไขชื่อแล้ว)",
+  "description": "รายละเอียดใหม่ที่อัปเดตแล้ว",
+  "duration": 15,
+  "lecturer": "อาจารย์ทดสอบคนเดิม",
+  "category": "Test",
+  "promote": 0,
+  "course_image": "updated.png"
+}
+
+### 106: ลบหลักสูตร (Delete)
+DELETE http://localhost:3000/course/delete?courseId=99
